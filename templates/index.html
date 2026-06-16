@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balance Sheet QA System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📊 Balance Sheet QA System</h1>
+            <p>Upload a balance sheet and ask questions about it powered by AI</p>
+            <button id="endSessionBtn" class="end-session-button" title="Stop the server">⏹ End Session</button>
+        </header>
+
+        <main>
+            <!-- File Upload Section -->
+            <section class="upload-section">
+                <h2>Step 1: Upload Balance Sheet</h2>
+                <div class="upload-area" id="uploadArea">
+                    <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="17 8 12 3 7 8"></polyline>
+                        <line x1="12" y1="3" x2="12" y2="15"></line>
+                    </svg>
+                    <p>Drag and drop your balance sheet here</p>
+                    <p class="upload-hint">or click to browse</p>
+                    <input 
+                        type="file" 
+                        id="fileInput" 
+                        accept=".pdf,.txt" 
+                        style="display: none;"
+                    >
+                </div>
+                <div id="fileStatus" class="file-status"></div>
+            </section>
+
+            <!-- QA Section -->
+            <section class="qa-section" id="qaSection" style="display: none;">
+                <h2>Step 2: Ask Questions</h2>
+                <div class="qa-container">
+                    <div class="chat-history" id="chatHistory"></div>
+                    
+                    <div class="input-area">
+                        <div class="input-group">
+                            <input 
+                                type="text" 
+                                id="questionInput" 
+                                placeholder="Ask a question about the balance sheet..."
+                                class="question-input"
+                            >
+                            <button id="askBtn" class="ask-button">
+                                <span>Ask</span>
+                                <svg class="button-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                                </svg>
+                            </button>
+                        </div>
+                        <button id="resetBtn" class="reset-button">🔄 Clear History</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Powered by OpenRouter API | Claude 3.5, GPT-4, Llama, and more</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
