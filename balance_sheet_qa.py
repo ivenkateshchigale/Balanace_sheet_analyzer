@@ -150,6 +150,12 @@ Guidelines:
 - Use only the provided context. Do NOT hallucinate figures.
 - Cite specific line items or numbers when relevant.
 - If the context is insufficient, say so clearly.
+- Focus on balance sheet fundamentals only (liquidity, leverage, equity, assets,
+  liabilities, working capital, and solvency).
+- When asked for an investment view, provide a brief recommendation such as:
+  "Good fundamentals — may consider buying" or "Weak fundamentals — don't buy".
+- Explain the recommendation using the provided balance sheet metrics.
+- Do not provide price targets, market timing, or non-balance-sheet factors.
 - Format currency values clearly (e.g., ₹ 1,234.56 Cr or $1.2M).
 - Keep answers concise but complete.
 """

@@ -51,9 +51,14 @@ Navigate to `http://localhost:5000` in your web browser
 2. **Ask Questions**
    - Type your question in the input field
    - Press Enter or click "Ask" button
+   - Use `Ctrl+Enter` (Windows/Linux) or `Cmd+Enter` (macOS) to submit as well
    - Wait for the AI to analyze and respond
 
-3. **Clear History**
+3. **Keyboard Shortcuts**
+   - `Alt+R` to reset the conversation history
+   - `Alt+E` to end the session
+
+4. **Clear History**
    - Click "🔄 Clear History" to reset conversation history
 
 ## File Requirements

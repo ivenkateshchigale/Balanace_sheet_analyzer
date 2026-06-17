@@ -90,12 +90,36 @@ function showStatus(message, type) {
 
 // QA Handling
 askBtn.addEventListener('click', askQuestion);
-questionInput.addEventListener('keypress', (e) => {
+questionInput.addEventListener('keydown', (e) => {
     if (e.key === 'Enter' && !e.shiftKey) {
         e.preventDefault();
         askQuestion();
     }
 });
+
+window.addEventListener('keydown', (e) => {
+    // Submit question with Ctrl+Enter / Cmd+Enter
+    if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+        e.preventDefault();
+        askQuestion();
+        return;
+    }
+
+    // Reset conversation with Alt+R
+    if (e.altKey && e.key.toLowerCase() === 'r') {
+        e.preventDefault();
+        resetConversation();
+        return;
+    }
+
+    // End session with Alt+E
+    if (e.altKey && e.key.toLowerCase() === 'e') {
+        e.preventDefault();
+        endSession();
+        return;
+    }
+});
+
 resetBtn.addEventListener('click', resetConversation);
 endSessionBtn.addEventListener('click', endSession);
 
